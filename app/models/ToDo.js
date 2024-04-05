@@ -8,6 +8,14 @@ export class Todo {
     }
     get ListTemplate() {
         return `
+<div>
+    <form>
+        <input type="checkbox" class="rounded" name="check">
+    </form>
+    <span>
+        ${this.description}
+    </span>
+</div>
         `
     }
 }
@@ -22,6 +30,7 @@ export class Scenic {
     }
     get ScenicTemplate() {
         return `
+        background-image: url('${this.url}')
         `
     }
 }
@@ -36,20 +45,33 @@ export class Weather {
     }
     get WeatherTemplate() {
         return `
-        
-        `
+<div>
+    ${this.weather}
+    <p>${this.description}</p>
+</div>
+`
     }
 }
 /**@params {{quote: string, author: string, tags: [], description: string}}*/
 export class Wisdom {
     constructor(data) {
-        this.quote = data.quote.body /* may be content instead of body*/
+        this.quote = data.quote /* may be content instead of body*/
         this.author = data.author
         this.tags = data.tags
         this.description = data.description
     }
     get WisdomTemplate() {
         return `
-        `
+<div>
+    <p>${this.quote}</p>
+    <h5>${this.author}</h5>
+</div>
+`
+    }
+}
+
+export class Time {
+    constructor(data) {
+        this.date = Date()
     }
 }

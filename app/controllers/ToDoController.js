@@ -28,7 +28,7 @@ export class ToDoController {
             console.log('formdata processed in controller, sending to service', toDoData)
             await todoService.createToDo(toDoData)
             // @ts-ignore
-            document.getElementById('create-todo').reset()
+            document.getElementById('todo-list').reset()
         } catch (error) {
             Pop.toast("Oh no! It didn't go!", "error")
             console.log(error)
@@ -60,8 +60,10 @@ export class ToDoController {
     }
 
     drawToDos() {
+        console.log('drawing todos')
         let toDoList = ''
-        AppState.todos.filter(todo => todo.complete == false).forEach(todo => toDoList += todo.ListTemplate)
+        AppState.todos.forEach(todo => toDoList += todo.ListTemplate)
+        // AppState.todos.filter(todo => todo.complete == false).forEach(todo => toDoList += todo.ListTemplate)
         setHTML('todo-list', toDoList)
     }
 

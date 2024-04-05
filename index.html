@@ -16,12 +16,43 @@
 </head>
 
 <body id="bckimg">
-  <header>
-    <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+  <header class="container-flex">
+    <nav class="navbar bg-dark">
+
+      <!--OFFCANVAS FORM BUTTON-->
+      <button type="button" class="btn btn-transparent text-light rounded-pill" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasForm" aria-controls="offcanvasForm"><i class="mdi mdi-pencil-outline"></i></button>
+      <!--AUTH BUTTON-->
+      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+    </nav>
   </header>
 
-  <!-- SECTION -->
-  <main>
+  <main class="container-flex">
+    <section class="row">
+      <div id="todo-list" class="col-4">
+
+      </div>
+      <div id="completed-list">
+
+      </div>
+
+    </section>
+    <!-- OFFCANVAS FORM -->
+    <div class="offcanvas" tabindex="-1" id="offcanvasForm" aria-labelledby="offcanvasLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasLabel">Create To Do</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <form onsubmit="app.ToDoController.createToDo()">
+          <label for="description">What To Do</label>
+          <input class="mb-3" type="text" name="description" id="new-todo-description">
+          <button class="btn btn-outline rounded-pill"><i class="mdi mdi-plus-circle-outline"></i></button>
+        </form>
+      </div>
+    </div>
+
+
 
 
   </main>

@@ -24,7 +24,7 @@ class ObservableAppState extends EventEmitter {
 
   wisdom = null
 
-  time = Date()
+  time = null
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())
