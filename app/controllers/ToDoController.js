@@ -35,13 +35,12 @@ export class ToDoController {
         }
     }
 
-    async checkToDo() {
+    async checkToDo(id) {
         event.preventDefault()
         try {
             const checkbox = event.target
-            const check = getFormData(checkbox)
-            console.log('see a check is made, sending to service', check)
-            await todoService.completeToDo(check)
+            console.log('see a check is made, sending to service')
+            await todoService.completeToDo(id)
             // this.drawCheckedToDo()
         } catch (error) {
             Pop.toast("Can't do that right now, sorry!", "error")
@@ -67,11 +66,11 @@ export class ToDoController {
         setHTML('todo-list', toDoList)
     }
 
-    drawCheckedToDo() {
-        let completedList = ''
-        AppState.todos.filter(todo => todo.complete == true).forEach(todo => completedList += todo.CompletedListTemplate)
-        setHTML('completed-list', completedList)
-    }
+    // drawCheckedToDo() {
+    //     let completedList = ''
+    //     AppState.todos.filter(todo => todo.complete == true).forEach(todo => completedList += todo.CompletedListTemplate)
+    //     setHTML('completed-list', completedList)
+    // }
 
     async deleteToDo(description) {
         try {
@@ -84,7 +83,5 @@ export class ToDoController {
             Pop.toast("I can't delete this yet", "error")
             console.log(error)
         }
-
     }
-
 }

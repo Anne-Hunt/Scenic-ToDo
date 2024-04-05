@@ -24,12 +24,6 @@ class ScenicService {
         const weather = response.data
         AppState.weather = new Weather(weather)
     }
-
-    getTime() {
-
-    }
-
-
 }
 
 export const scenicService = new ScenicService()

@@ -16,14 +16,28 @@
 </head>
 
 <body id="bckimg">
-  <header class="container-flex">
+  <header>
     <nav class="navbar bg-dark">
 
       <!--OFFCANVAS FORM BUTTON-->
       <button type="button" class="btn btn-transparent text-light rounded-pill" data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasForm" aria-controls="offcanvasForm"><i class="mdi mdi-pencil-outline"></i></button>
-      <!--AUTH BUTTON-->
-      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+
+      <!-- OFFCANVAS FORM -->
+      <div class="offcanvas" tabindex="-1" id="offcanvasForm" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-dark" id="offcanvasLabel">Create To Do</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <form onsubmit="app.ToDoController.createToDo()">
+            <label class="form-label" for="description">What To Do</label>
+            <input class="mb-3 rounded form-control" type="text" name="description" id="new-todo-description">
+            <button class="btn btn-outline-dark rounded-pill"><i class="mdi mdi-plus-circle-outline"></i></button>
+          </form>
+        </div>
+      </div>
+
     </nav>
   </header>
 
@@ -32,25 +46,13 @@
       <div id="todo-list" class="col-4">
 
       </div>
-      <div id="completed-list">
+      <div id="wisdom">
 
       </div>
+
 
     </section>
-    <!-- OFFCANVAS FORM -->
-    <div class="offcanvas" tabindex="-1" id="offcanvasForm" aria-labelledby="offcanvasLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasLabel">Create To Do</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <form onsubmit="app.ToDoController.createToDo()">
-          <label for="description">What To Do</label>
-          <input class="mb-3" type="text" name="description" id="new-todo-description">
-          <button class="btn btn-outline rounded-pill"><i class="mdi mdi-plus-circle-outline"></i></button>
-        </form>
-      </div>
-    </div>
+
 
 
 
@@ -58,7 +60,19 @@
   </main>
 
   <!-- SECTION -->
-  <footer class="bg-dark text-light">
+  <footer class="text-light container-flex p-2">
+    <section class="row justify-content-between p-3 rounded-pill bg-black opacity-50">
+
+      <div class="col-3" id="weather">
+
+      </div>
+
+      <div class="col-3" id="time">
+
+      </div>
+      <!--AUTH BUTTON-->
+      <div class="col-3 justify-content-end align-items-center d-flex" id="authstate"></div>
+    </section>
     <div class="text-center no-select">
       <p class="mb-0"><small>Made by Anne Hunt</small></p>
     </div>

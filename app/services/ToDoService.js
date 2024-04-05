@@ -19,11 +19,15 @@ class ToDoService {
         console.log('created a todo in appstate', AppState.todos)
     }
 
-    async completeToDo(data) {
-        const toDoToCheck = AppState.todos.find(todo => todo.description == data)
-        toDoToCheck.completed = true
-        const response = await api.put('api/todos', data)
-        console.log(response, data)
+    async completeToDo(id) {
+        const toDoToCheck = AppState.todos.find(todo => todo.id == id)
+        console.log('todo found')
+        toDoToCheck.completed = !toDoToCheck.completed
+        console.log(toDoToCheck)
+        let apiCheckItem = id
+        const response = await api.put(`api/todos/${apiCheckItem}`, toDoToCheck)
+        console.log(response, id)
+        AppState.emit('todos')
     }
 
     async deleteToDo(data) {

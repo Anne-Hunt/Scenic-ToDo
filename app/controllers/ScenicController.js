@@ -10,7 +10,9 @@ export class ScenicController {
         AppState.on('account', this.getWeather)
         AppState.on('account', this.getWisdom)
         AppState.on('scenic', this.drawScenic)
-        this.drawClock()
+        AppState.on('wisdom', this.drawWisdom)
+        AppState.on('weather', this.drawWeather)
+        this.clockTimer()
     }
 
     async getWeather() {
@@ -42,7 +44,6 @@ export class ScenicController {
             Pop.toast("Can't access scenery at the mo", "error")
             console.log(error)
         }
-
     }
 
     drawScenic() {
@@ -50,19 +51,29 @@ export class ScenicController {
         let apiImg = AppState.scenic.ScenicTemplate
         const scenery = document.getElementById('bckimg')
         scenery.setAttribute('style', apiImg)
-
     }
 
     drawWeather() {
-
+        console.log('drawing weather')
+        setHTML('weather', AppState.weather.WeatherTemplate)
+        console.log(AppState.weather)
     }
 
     drawClock() {
+        // console.log('clock time')
+        const rawTime = new Date()
+        const time = rawTime.toLocaleTimeString()
+        setHTML('time', time)
+        // console.log('time', time)
+    }
 
+    clockTimer() {
+        setInterval(this.drawClock, 1000)
     }
 
     drawWisdom() {
-
+        console.log('wisdom entering the draw')
+        setHTML('wisdom', AppState.wisdom.WisdomTemplate)
+        console.log(AppState.wisdom.quote)
     }
-
 }
