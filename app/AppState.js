@@ -18,11 +18,13 @@ class ObservableAppState extends EventEmitter {
     // }
   ]
 
-  scenic = []
+  scenic = null
 
-  weather = []
+  weather = null
 
-  wisdom = []
+  wisdom = null
+
+  time = Date()
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())
