@@ -9,6 +9,7 @@ export class ToDoController {
     constructor() {
         AppState.on('account', this.getToDos)
         AppState.on('todos', this.drawToDos)
+        AppState.on('todos', this.getIncompletedCount)
     }
 
     async getToDos() {
@@ -71,6 +72,13 @@ export class ToDoController {
     //     AppState.todos.filter(todo => todo.complete == true).forEach(todo => completedList += todo.CompletedListTemplate)
     //     setHTML('completed-list', completedList)
     // }
+    getIncompletedCount() {
+        todoService.getIncompleteCount()
+        let incompleteCount = AppState.incompleteCount
+        if (incompleteCount > 0) {
+            setHTML('incompleteCount', incompleteCount)
+        }
+    }
 
     async deleteToDo(description) {
         try {

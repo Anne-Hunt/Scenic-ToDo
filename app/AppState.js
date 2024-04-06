@@ -23,6 +23,8 @@ class ObservableAppState extends EventEmitter {
   weather = null
 
   wisdom = null
+
+  incompleteCount = 0
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

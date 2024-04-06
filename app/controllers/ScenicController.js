@@ -76,4 +76,12 @@ export class ScenicController {
         setHTML('wisdom', AppState.wisdom.WisdomTemplate)
         console.log(AppState.wisdom.quote)
     }
+
+    toggleTemp() {
+
+    }
+
+    toggleAuthor() {
+
+    }
 }

@@ -5,7 +5,7 @@ export class Account {
     this.nickname = data.nickname
     this.name = data.name
     this.picture = data.picture
-    // TODO add additional properties if needed
+    //  add additional properties if needed
   }
 
   get AccountCardTemplate() {

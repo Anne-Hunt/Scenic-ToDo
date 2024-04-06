@@ -35,6 +35,16 @@ class ToDoService {
         const response = await api.delete('api/todos', todoDelete)
         console.log('delete', response)
     }
+
+    getIncompleteCount() {
+        let incompleteCount = 0
+        for (let i = 0; i < AppState.todos.length; i++) {
+            let todo = AppState.todos[i]
+            if (todo.completed != true) incompleteCount++
+        }
+        AppState.incompleteCount = incompleteCount
+        return incompleteCount
+    }
 }
 
 export const todoService = new ToDoService()
