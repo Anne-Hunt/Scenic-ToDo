@@ -15,6 +15,7 @@ export class ScenicController {
         this.clockTimer()
     }
 
+
     async getWeather() {
         try {
             console.log("scenic controller to access service weather")
@@ -79,9 +80,6 @@ export class ScenicController {
 
     toggleTemp() {
 
-    }
-
-    toggleAuthor() {
 
     }
 }

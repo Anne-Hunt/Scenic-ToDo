@@ -41,24 +41,15 @@ footer {
   color: white;
 }
 
-.deletebtn {
-  fill: var(--c-red);
+#wisdom:hover {
+  color: white;
+
+  h4+.hidden {
+    display: inline-block;
+    color: white;
+  }
 }
 
-.change {
-  background-color: var(--c-primary);
-  font-size: medium;
-}
-
-.smalltext {
-  font-size: medium;
-}
-
-.xlargetext {
-  font-size: x-large;
-}
-
-.viewable {
-  min-height: 50dvh;
-  background-color: rgb(233, 236, 239);
+.hidden {
+  display: none;
 }

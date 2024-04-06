@@ -64,7 +64,6 @@ export class Weather {
         </div>
     </div>
 `
-
     }
 
     get Celcius() {
@@ -91,28 +90,11 @@ export class Wisdom {
 
     get WisdomTemplate() {
         return `
-<div>
-    <p>${this.quote}</p>
-    <h5>${this.author}</h5>
+        <div>
+    <h5>${this.quote}</h5>
+    <h4 class="hidden">${this.author}</h4>
 </div>
 `
     }
-    get QuoteText() {
-        return
-    }
 }
 
-// export class Clock {
-//     constructor() {
-//         this.time = new Date()
-//     }
-
-//     get TimeNow() {
-//         return `
-//         <h1>${this.ClockTime}</h1>
-//         `
-//     }
-//     get ClockTime() {
-//         return this.time.toLocaleTimeString
-//     }
-// }

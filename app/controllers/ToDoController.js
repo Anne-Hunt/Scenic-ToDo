@@ -67,11 +67,6 @@ export class ToDoController {
         setHTML('todo-list', toDoList)
     }
 
-    // drawCheckedToDo() {
-    //     let completedList = ''
-    //     AppState.todos.filter(todo => todo.complete == true).forEach(todo => completedList += todo.CompletedListTemplate)
-    //     setHTML('completed-list', completedList)
-    // }
     getIncompletedCount() {
         todoService.getIncompleteCount()
         let incompleteCount = AppState.incompleteCount
