@@ -43,3 +43,7 @@ nav {
   color: white !important;
   opacity: 100% !important;
 }
+
+#wisdom {
+  cursor: grab;
+}
