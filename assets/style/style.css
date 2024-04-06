@@ -41,10 +41,10 @@ footer {
   color: white;
 }
 
-#wisdom:hover {
+#ul:hover {
   color: white;
 
-  h4+.hidden {
+  li+.hidden {
     display: inline-block;
     color: white;
   }

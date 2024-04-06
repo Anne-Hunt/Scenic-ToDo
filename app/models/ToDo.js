@@ -16,6 +16,7 @@ export class Todo {
     <span>
         ${this.description}
     </span>
+    <a class="fs-5" onclick="app.ToDoController.deleteToDo('${this.id}')"><i class="mdi mdi-delete-circle-outline"></i></a>
 </div>
         `
     }
@@ -90,10 +91,9 @@ export class Wisdom {
 
     get WisdomTemplate() {
         return `
-        <div>
-    <h5>${this.quote}</h5>
-    <h4 class="hidden">${this.author}</h4>
-</div>
+    <ul>${this.quote}
+    <li class="hidden">${this.author}</li>
+    </ul>
 `
     }
 }

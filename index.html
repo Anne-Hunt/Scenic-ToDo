@@ -17,10 +17,10 @@
 
 <body id="bckimg">
   <header>
-    <nav class="navbar px-3 justify-content-center">
-      <div id="wisdom" class="p-3 text-light rounded bg-black opacity-50 text-center"></div>
+    <section class="px-3 justify-content-center">
+      <div id="wisdom" class="cats p-3 text-light rounded bg-black opacity-50 text-center"></div>
 
-    </nav>
+    </section>
   </header>
 
   <main class="container-flex">
@@ -79,16 +79,18 @@
         <p class="mb-0"><small>Made by Anne Hunt</small></p>
       </div>
       <!-- Dropup Account Btn -->
-      <div class="col-3 btn-group dropup">
-        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          Account
-        </button>
-        <ul class="dropdown-menu">
-          <!--AUTH BUTTON-->
-          <li id="authstate"></li>
-          <li></li>
-          <!-- Dropdown menu links -->
-        </ul>
+      <div class="col-3 d-flex justify-content-end">
+        <div class="btn-group dropup p-3">
+          <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </button>
+          <ul class="dropdown-menu">
+            <!--AUTH BUTTON-->
+            <li id="authstate"></li>
+            <li></li>
+            <!-- Dropdown menu links -->
+          </ul>
+        </div>
       </div>
     </section>
   </footer>

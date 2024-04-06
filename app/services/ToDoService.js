@@ -30,9 +30,10 @@ class ToDoService {
         AppState.emit('todos')
     }
 
-    async deleteToDo(data) {
-        const todoDelete = AppState.todos.find(todo => todo.description == data)
-        const response = await api.delete('api/todos', todoDelete)
+    async deleteToDo(id) {
+        const response = await api.delete(`api/todos/${id}`)
+        const spliceToDo = AppState.todos.findIndex(todo => todo.id == id)
+        AppState.todos.splice(spliceToDo, 1)
         console.log('delete', response)
     }
 

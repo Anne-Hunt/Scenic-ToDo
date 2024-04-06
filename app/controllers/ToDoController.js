@@ -75,13 +75,13 @@ export class ToDoController {
         }
     }
 
-    async deleteToDo(description) {
+    async deleteToDo(id) {
         try {
             const result = await Pop.confirm("Do you really want to delete this?")
             if (result == false) return
 
             console.log('confirmed delete, going to service')
-            await todoService.deleteToDo(description)
+            await todoService.deleteToDo(id)
         } catch (error) {
             Pop.toast("I can't delete this yet", "error")
             console.log(error)
