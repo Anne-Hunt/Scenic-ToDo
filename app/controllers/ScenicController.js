@@ -13,6 +13,7 @@ export class ScenicController {
         AppState.on('wisdom', this.drawWisdom)
         AppState.on('weather', this.drawWeather)
         this.clockTimer()
+        this.accountPop()
     }
 
 
@@ -85,5 +86,11 @@ export class ScenicController {
 
     toggleAuthor() {
         document.getElementById('author').classList.toggle("d-none")
+    }
+
+    accountPop() {
+        if (AppState.account == null) {
+            Pop.toast("Please use the account link below to sign in or create an account to access Scenic ToDo.", "info")
+        } else return
     }
 }
