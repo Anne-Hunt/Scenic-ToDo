@@ -49,21 +49,16 @@ export class Weather {
     }
     get WeatherTemplate() {
         return `
-        <div>
-        <div class="card bg-black rounded outline-white text-white row">
-            <div class="col-6">
-                <span class="d-none">${this.Celcius}</span>
-                <span>${this.Fahrenheit}</span>
-                <span>${this.description}</span>
-            </div>
-            <div class="col-6">
-                <span>
-                    ${this.city}
-                </span>
-                <img src="${this.icon}">
-            </div>
-        </div>
+        <div class="row bg-black opacity-100 rounded outline-white text-white justify-content-center m-0 p-0">
+    <div class="col-4 m-0 p-0">
+        <span onclick="app.ScenicController.toggleTemp()"><span id="temp-c" class="d-none">${this.Celcius}C</span>
+        <span id="temp-f" class="">${this.Fahrenheit}F</span></span><br>
+        <span><small>${this.description}</small></span>
     </div>
+    <div class="col-4 m-0 p-0">
+            <img src="${this.icon}">
+    </div>
+</div>
 `
     }
 
@@ -91,9 +86,8 @@ export class Wisdom {
 
     get WisdomTemplate() {
         return `
-    <ul>${this.quote}
-    <li class="hidden">${this.author}</li>
-    </ul>
+    <h4>${this.quote}</h4>
+    <h5 id="author" class="d-none">${this.author}</h5>
 `
     }
 }

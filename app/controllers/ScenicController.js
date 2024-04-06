@@ -79,7 +79,11 @@ export class ScenicController {
     }
 
     toggleTemp() {
+        document.getElementById('temp-f').classList.toggle("d-none")
+        document.getElementById('temp-c').classList.toggle("d-none")
+    }
 
-
+    toggleAuthor() {
+        document.getElementById('author').classList.toggle("d-none")
     }
 }

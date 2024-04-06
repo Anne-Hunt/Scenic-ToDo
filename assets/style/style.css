@@ -37,19 +37,9 @@ nav {
   color: white;
 }
 
-footer {
-  color: white;
-}
-
-#ul:hover {
-  color: white;
-
-  li+.hidden {
-    display: inline-block;
-    color: white;
-  }
-}
-
-.hidden {
-  display: none;
+#weather {
+  background-color: black !important;
+  border: 3px solid white !important;
+  color: white !important;
+  opacity: 100% !important;
 }

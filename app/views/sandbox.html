@@ -1,15 +1,13 @@
-<div>
-    <div class="card bg-black opacity-100 rounded outline-white text-white row">
-        <div class="col-6">
-            <span class="d-none">${this.Celcius}</span>
-            <span>${this.Fahrenheit}</span>
-            <span>${this.description}</span>
-        </div>
-        <div class="col-6">
-            <span>
-                ${this.city}
-            </span>
-            <img src="${this.icon}">
-        </div>
+<div class="row bg-black opacity-100 rounded outline-white text-white row">
+    <div class="col-6">
+        <span class="d-none">${this.Celcius}</span>
+        <span>${this.Fahrenheit}</span>
+        <span><small>${this.description}</small></span>
+    </div>
+    <div class="col-6">
+        <span>
+            ${this.city}
+            <i src="${this.icon}"></i>
+        </span>
     </div>
 </div>
