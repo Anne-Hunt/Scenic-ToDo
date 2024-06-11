@@ -29,7 +29,8 @@ export class ToDoController {
             console.log('formdata processed in controller, sending to service', toDoData)
             await todoService.createToDo(toDoData)
             // @ts-ignore
-            document.getElementById('todo-list').reset()
+            // document.getElementById('todo-list').reset()
+            form.reset()
         } catch (error) {
             Pop.toast("Oh no! It didn't go!", "error")
             console.log(error)
